@@ -47,4 +47,12 @@ module.exports = function (app) {
   app.route("/api/master/user").put(user.insert);
   app.route("/api/master/user").post(user.update);
   app.route("/api/master/user").delete(user.delete);
+
+  // MODULE RESTO
+  var resto_branch = require("./controller/resto/resto_branch");
+  app.route("/api/resto/branch").get(resto_branch.get);
+  app.route("/api/resto/branch").put(resto_branch.insert);
+  app.route("/api/resto/branch").post(resto_branch.update);
+  app.route("/api/resto/branch").delete(resto_branch.delete);
+
 };
