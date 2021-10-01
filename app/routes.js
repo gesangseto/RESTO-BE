@@ -49,10 +49,29 @@ module.exports = function (app) {
   app.route("/api/master/user").delete(user.delete);
 
   // MODULE RESTO
-  var resto_branch = require("./controller/resto/resto_branch");
-  app.route("/api/resto/branch").get(resto_branch.get);
-  app.route("/api/resto/branch").put(resto_branch.insert);
-  app.route("/api/resto/branch").post(resto_branch.update);
-  app.route("/api/resto/branch").delete(resto_branch.delete);
-
+  var r_branch = require("./controller/resto/resto_branch");
+  app.route("/api/resto/branch").get(r_branch.get);
+  app.route("/api/resto/branch").put(r_branch.insert);
+  app.route("/api/resto/branch").post(r_branch.update);
+  app.route("/api/resto/branch").delete(r_branch.delete);
+  var r_menu = require("./controller/resto/resto_menu");
+  app.route("/api/resto/menu").get(r_menu.get);
+  app.route("/api/resto/menu").put(r_menu.insert);
+  app.route("/api/resto/menu").post(r_menu.update);
+  app.route("/api/resto/menu").delete(r_menu.delete);
+  var r_menu_category = require("./controller/resto/resto_menu_category");
+  app.route("/api/resto/menu_category").get(r_menu_category.get);
+  app.route("/api/resto/menu_category").put(r_menu_category.insert);
+  app.route("/api/resto/menu_category").post(r_menu_category.update);
+  app.route("/api/resto/menu_category").delete(r_menu_category.delete);
+  var r_menu_v_ctgry = require("./controller/resto/resto_menu_variant_category");
+  app.route("/api/resto/menu_variant_category").get(r_menu_v_ctgry.get);
+  app.route("/api/resto/menu_variant_category").put(r_menu_v_ctgry.insert);
+  app.route("/api/resto/menu_variant_category").post(r_menu_v_ctgry.update);
+  app.route("/api/resto/menu_variant_category").delete(r_menu_v_ctgry.delete);
+  var resto_menu_variant = require("./controller/resto/resto_menu_variant");
+  app.route("/api/resto/menu_variant").get(resto_menu_variant.get);
+  app.route("/api/resto/menu_variant").put(resto_menu_variant.insert);
+  app.route("/api/resto/menu_variant").post(resto_menu_variant.update);
+  app.route("/api/resto/menu_variant").delete(resto_menu_variant.delete);
 };
