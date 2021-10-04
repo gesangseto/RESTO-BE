@@ -54,6 +54,11 @@ module.exports = function (app) {
   app.route("/api/resto/branch").put(r_branch.insert);
   app.route("/api/resto/branch").post(r_branch.update);
   app.route("/api/resto/branch").delete(r_branch.delete);
+  var r_branch_menu = require("./controller/resto/resto_branch_menu");
+  app.route("/api/resto/branch_menu").get(r_branch_menu.get);
+  app.route("/api/resto/branch_menu").put(r_branch_menu.insert);
+  app.route("/api/resto/branch_menu").post(r_branch_menu.update);
+  app.route("/api/resto/branch_menu").delete(r_branch_menu.delete);
   var r_menu = require("./controller/resto/resto_menu");
   app.route("/api/resto/menu").get(r_menu.get);
   app.route("/api/resto/menu").put(r_menu.insert);
